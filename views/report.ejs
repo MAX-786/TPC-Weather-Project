@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+    <div class="container">
+
+        <h1>Weather in
+            <%= city %> :
+                <%= weather %>
+        </h1>
+        <img src="http://openweathermap.org/img/wn/<%= iconID %>@2x.png" alt="Weather Icon">
+        <h4 class="text-muted">
+            Description :
+            <%= description %>
+        </h4>
+        <h1>Tempreture :
+            <%= temp %>
+        </h1>
+        <a href="/index.html" role="button" class="btn btn-outline-light">Go Back</a>
+        <span id="bgColor" hidden><%= iconID %></span>
+    </div>
+
+    <%- include("partials/footer"); -%>
