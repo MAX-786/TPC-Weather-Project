@@ -1,9 +1,9 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const https = require("https");
 const _ = require("lodash");
-require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -43,7 +43,7 @@ app.post("/", (req, res) => {
 
             } else {
                 console.log(Data.message);
-                res.redirect(404, "/");
+                res.redirect(404, "/index.html");
 
             }
 
@@ -53,7 +53,7 @@ app.post("/", (req, res) => {
 
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is up and runnig on port 3000");
 });
 
